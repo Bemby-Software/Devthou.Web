@@ -1,0 +1,41 @@
+<h1>
+    Create Account
+</h1>
+
+<form [formGroup]="accountDetails" (ngSubmit)="onSubmit()">
+    <label>
+        Email Address
+        <input type="email" formControlName="email" />
+        <span *ngIf="accountDetails.controls['email'].invalid && accountDetails.controls['email'].errors?.required && accountDetails.controls['email'].touched" >
+            An email address is required.
+        </span>
+        <span *ngIf="accountDetails.controls['email'].errors?.invalid && accountDetails.controls['email'].touched" >
+            {{accountDetails.controls['email'].errors?.invalid}}
+        </span>
+        <span *ngIf="accountDetails.controls['email'].errors?.inUse && accountDetails.controls['email'].touched" >
+            {{accountDetails.controls['email'].errors?.inUse}}
+        </span>
+    </label>
+    <br />
+    <label>
+        Mobile Number
+        <input type="tel" formControlName="mobileNumber" />
+        <span *ngIf="accountDetails.controls['mobileNumber'].invalid && accountDetails.controls['mobileNumber'].errors?.required && accountDetails.controls['mobileNumber'].touched" >
+            A mobile number is required.
+        </span>
+    </label>
+    <br />
+    <label>
+        Password
+        <input type="password" formControlName="password" />
+        <span *ngIf="accountDetails.controls['password'].invalid && accountDetails.controls['password'].errors?.required && accountDetails.controls['password'].touched" >
+            A password is required.
+        </span>
+        <span *ngIf="accountDetails.controls['password'].invalid && accountDetails.controls['password'].errors?.pattern && !accountDetails.controls['password'].errors?.minLength && accountDetails.controls['password'].touched" >
+            The password must contain at least 1 number, 1 special character (_!@#$&*) and at lease 1 upper case character. The password must also contain at least 8 characters.
+        </span>  
+    </label>
+    <br />
+    <button type="submit" [disabled]="!accountDetails.valid">Submit</button>
+    <button>Cancel</button>
+</form>
