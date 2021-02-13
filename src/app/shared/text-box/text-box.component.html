@@ -1,0 +1,4 @@
+<div [ngClass]="{ 'input-outlined' : true, 'input-outlined-active' : isActive, 'input-outlined-hover' : isMouseOver }">
+    <label>{{label}}</label>
+    <input (focus)="onInputFocused()" (blur)="onInputBlurred()" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()"  />
+</div>

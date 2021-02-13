@@ -1,0 +1,11 @@
+:host {
+    --primary: #0aee02;
+    --secondary: #e602ee;
+    --analogous-1: #80ee02;
+    --analogous-2: #80ee02;
+    --triadic-1: #02eee6;
+    --triadic-2: #020aee;
+    --error: #B00020;
+    --foreground: #9c9c9c;
+    --background: #ffffff;
+}
