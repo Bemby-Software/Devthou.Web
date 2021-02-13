@@ -1,4 +1,7 @@
-<div [ngClass]="{ 'input-outlined' : true, 'input-outlined-active' : isActive, 'input-outlined-hover' : isMouseOver }">
+<div [ngClass]="{ 'input-outlined' : true, 'input-outlined-active' : isActive, 'input-outlined-hover' : isMouseOver, 'input-outlined-has-value' : hasValue, 'input-outlined-invalid' : hasError }">
     <label>{{label}}</label>
-    <input (focus)="onInputFocused()" (blur)="onInputBlurred()" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()"  />
+    <input #inputTextBox ngModel [type]="type" (input)="onChange($event)" (focus)="onInputFocused()" (blur)="onInputBlurred()" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()"  />
+    <div>
+        <ng-content></ng-content>
+    </div>
 </div>

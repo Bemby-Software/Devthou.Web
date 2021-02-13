@@ -15,7 +15,7 @@ input, input:focus, textarea:focus, select:focus{
 
 .input-outlined-hover {
     display: inline-block;
-    border: 2px solid var(--primary);
+    border: 2px solid var(--analogous-1);
     transition: all .2s linear;
     border-radius: 5px;
 }
@@ -27,13 +27,14 @@ input, input:focus, textarea:focus, select:focus{
     border-radius: 5px;
 }
 
-.input-outlined .invalid {
+.input-outlined-invalid {
     display: inline-block;
     border: 2px solid var(--error);
     border-radius: 5px;
 }
 
 .input-outlined>label {
+    pointer-events: none;
     position: absolute;    
     transition: all .2s linear;
     color: var(--foreground);
@@ -45,15 +46,17 @@ input, input:focus, textarea:focus, select:focus{
 }
 
 .input-outlined-hover>label {
+    pointer-events: none;
     position: absolute;
     transition: all .2s linear;
     top: -10px;
     left: 10px;
-    color: var(--primary);
+    color: var(--analogous-1);
     background-color: var(--background);
 }
 
 .input-outlined-active>label {
+    pointer-events: none;
     position: absolute;
     top: -10px;
     left: 10px;
@@ -63,7 +66,16 @@ input, input:focus, textarea:focus, select:focus{
 }
 
 .input-outlined-has-value>label {
+    pointer-events: none;
     position: absolute;
     top: -10px;
+    background-color: var(--background);
+}
+
+.input-outlined-invalid>label {
+    pointer-events: none;
+    position: absolute;
+    top: -10px;
+    color: var(--error);
     background-color: var(--background);
 }
