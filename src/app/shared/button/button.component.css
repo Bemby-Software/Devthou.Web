@@ -1,0 +1,31 @@
+button {
+    all: unset;
+}
+
+.btn {
+    background-color: transparent;
+    padding: 6px;
+    margin: 10px;
+    border: 2px solid rgb(var(--foreground));
+    border-radius: 5px;
+    color: rgb(var(--foreground));
+}
+
+.btn:disabled {
+    background-color: rgba(var(--foreground), 0.3);
+    opacity: 0.6;
+}
+
+.btn:hover:enabled {
+    transition: all .2s linear;
+    color: rgb(var(--primary));
+    border-color: rgb(var(--primary));
+    cursor: pointer;
+}
+
+.btn:active:enabled {
+    color: rgb(var(--primary));
+    background-color: rgba(var(--primary), 0.15);
+    border-color: rgb(var(--primary));
+    cursor: pointer;
+}

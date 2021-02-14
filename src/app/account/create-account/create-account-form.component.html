@@ -1,0 +1,60 @@
+<h1>
+    Create Account Form
+</h1>
+
+<div style="display: inline-block;">
+    <form [formGroup]="accountDetails" (ngSubmit)="onSubmit()">
+        <app-text-box label="First Name" formControlName="firstName">
+            <span style="color: rgb(var(--error));" *ngIf="accountDetails.controls['email'].invalid && accountDetails.controls['email'].errors?.required && accountDetails.controls['email'].touched" >
+                Your first name is required.
+            </span>
+        </app-text-box>
+
+        <app-text-box label="Last Name" formControlName="lastName">
+            <span style="color: rgb(var(--error));" *ngIf="accountDetails.controls['email'].invalid && accountDetails.controls['email'].errors?.required && accountDetails.controls['email'].touched" >
+                Your first name is required.
+            </span>
+        </app-text-box>
+
+        <br />
+
+        <app-text-box type="email" label="Email Address" formControlName="email">
+            <span style="color: rgb(var(--error));" *ngIf="accountDetails.controls['email'].invalid && accountDetails.controls['email'].errors?.required && accountDetails.controls['email'].touched" >
+                An email address is required.
+            </span>
+            <span style="color: rgb(var(--error));" *ngIf="accountDetails.controls['email'].errors?.invalid && accountDetails.controls['email'].touched" >
+                {{accountDetails.controls['email'].errors?.invalid}}
+            </span>
+            <span style="color: rgb(var(--error));" *ngIf="accountDetails.controls['email'].errors?.inUse && accountDetails.controls['email'].touched" >
+                {{accountDetails.controls['email'].errors?.inUse}}
+            </span>
+        </app-text-box>
+
+        <app-text-box type="tel" label="Mobile Number" formControlName="mobileNumber">
+            <span style="color: rgb(var(--error));" *ngIf="accountDetails.controls['mobileNumber'].invalid && accountDetails.controls['mobileNumber'].errors?.required && accountDetails.controls['mobileNumber'].touched" >
+                A mobile number is required.
+            </span>
+            <span style="color: rgb(var(--error);" *ngIf="accountDetails.controls['mobileNumber'].invalid && accountDetails.controls['mobileNumber'].errors?.invalid && accountDetails.controls['mobileNumber'].touched" >
+                {{accountDetails.controls['mobileNumber'].errors?.invalid}}
+            </span>
+        </app-text-box>
+
+        <br />
+
+        <div style="display: flex; justify-content: center;">
+            <app-text-box type="password" label="Password" formControlName="password">
+                <span style="color: rgb(var(--error));" *ngIf="accountDetails.controls['password'].invalid && accountDetails.controls['password'].errors?.required && accountDetails.controls['password'].touched" >
+                    A password is required.
+                </span>
+                <span style="color: rgb(var(--error));" *ngIf="accountDetails.controls['password'].invalid && accountDetails.controls['password'].errors?.pattern && !accountDetails.controls['password'].errors?.minLength && accountDetails.controls['password'].touched" >
+                    The password must contain at least 1 number, 1 special character (_!@#$&*) and at lease 1 upper case character. The password must also contain at least 8 characters.
+                </span>  
+            </app-text-box>
+        </div>
+        
+        <div style="display: flex; justify-content: center; margin: 0px;">
+            <app-button type="submit" [disabled]="!accountDetails.valid">Submit</app-button>
+            <app-button type="reset">Cancel</app-button>
+        </div>
+    </form>
+</div>

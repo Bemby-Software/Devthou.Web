@@ -1,5 +1,5 @@
-import { Component, ElementRef, forwardRef, Input, OnInit, Optional, Self, ViewChild } from '@angular/core';
-import { ControlValueAccessor, NgControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, ElementRef, Input, OnInit, Optional, Self, ViewChild } from '@angular/core';
+import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { element } from 'protractor';
 
 @Component({
@@ -18,6 +18,19 @@ export class TextBoxComponent implements OnInit, ControlValueAccessor {
   hasValue : boolean;
   onChangeCallback : any;
   onTouched : any;
+  value : string;
+
+  constructor(@Self() @Optional() private control: NgControl) {
+    this.control = control;
+    this.control.valueAccessor = this;
+    this.value = ""
+    this.label = "";
+    this.type = "text";
+    this.isActive = false;
+    this.isMouseOver = false;
+    this.hasError = false;
+    this.hasValue = false;
+   }
 
   checkForError() {
     this.hasError = this.control.invalid && this.control.touched;
@@ -45,24 +58,17 @@ export class TextBoxComponent implements OnInit, ControlValueAccessor {
   }
 
   onChange(event : Event) {
-    const value = (event.target as HTMLInputElement).value;
-    this.hasValue = value.length > 0;
-    this.onChangeCallback(value);
+    this.value = (event.target as HTMLInputElement).value;
+    this.hasValue = this.value.length > 0;
+    this.onChangeCallback(this.value);
     this.checkForError();
   }
 
-  constructor(@Self() @Optional() private control: NgControl) {
-    this.control = control;
-    this.control.valueAccessor = this;
-    this.label = "";
-    this.isActive = false;
-    this.isMouseOver = false;
-    this.hasError = false;
-    this.hasValue = false;
-   }
-
   writeValue(value: any): void {
-    this.inputTextBox.nativeElement.value = value;
+    this.value = value;
+    this.inputTextBox.nativeElement.value = this.value;    
+    this.hasValue = this.value === null ? false : this.value.length > 0;
+    this.checkForError();
   }
 
   registerOnChange(fn: any): void {
@@ -71,6 +77,10 @@ export class TextBoxComponent implements OnInit, ControlValueAccessor {
 
   registerOnTouched(fn: any): void {    
     this.onTouched = fn;
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    this.inputTextBox.nativeElement.disabled = isDisabled;
   }
 
   ngOnInit(): void {

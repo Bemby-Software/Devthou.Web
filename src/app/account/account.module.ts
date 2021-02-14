@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CreateAccountComponent } from './create-account/create-account.component';
+import { CreateAccountFormComponent } from './create-account/create-account-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
-    CreateAccountComponent
+    CreateAccountFormComponent
   ],
-  exports: [CreateAccountComponent],
+  exports: [
+    CreateAccountFormComponent
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,

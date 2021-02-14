@@ -9,27 +9,27 @@ input, input:focus, textarea:focus, select:focus{
     transition: all .2s linear;
     padding: 6px;
     margin: 10px;
-    border: 2px solid var(--foreground);
+    border: 2px solid rgb(var(--foreground));
     border-radius: 5px;
 }
 
 .input-outlined-hover {
     display: inline-block;
-    border: 2px solid var(--analogous-1);
+    border: 2px solid rgb(var(--analogous-1));
     transition: all .2s linear;
     border-radius: 5px;
 }
 
 .input-outlined-active {
     display: inline-block;
-    border: 2px solid var(--primary);
+    border: 2px solid rgb(var(--primary));
     transition: all .2s linear;
     border-radius: 5px;
 }
 
 .input-outlined-invalid {
     display: inline-block;
-    border: 2px solid var(--error);
+    border: 2px solid rgb(var(--error));
     border-radius: 5px;
 }
 
@@ -37,12 +37,12 @@ input, input:focus, textarea:focus, select:focus{
     pointer-events: none;
     position: absolute;    
     transition: all .2s linear;
-    color: var(--foreground);
+    color: rgb(var(--foreground));
     top: 8px;
     left: 10px;
     padding-left: 3px;
     padding-right: 3px;
-    background-color: var(--background);
+    background-color: rgb(var(--background));
 }
 
 .input-outlined-hover>label {
@@ -51,8 +51,8 @@ input, input:focus, textarea:focus, select:focus{
     transition: all .2s linear;
     top: -10px;
     left: 10px;
-    color: var(--analogous-1);
-    background-color: var(--background);
+    color: rgb(var(--analogous-1));
+    background-color: rgb(var(--background));
 }
 
 .input-outlined-active>label {
@@ -61,21 +61,21 @@ input, input:focus, textarea:focus, select:focus{
     top: -10px;
     left: 10px;
     transition: all .2s linear;
-    color: var(--primary);
-    background-color: var(--background);
+    color: rgb(var(--primary));
+    background-color: rgb(var(--background));
 }
 
 .input-outlined-has-value>label {
     pointer-events: none;
     position: absolute;
     top: -10px;
-    background-color: var(--background);
+    background-color: rgb(var(--background));
 }
 
 .input-outlined-invalid>label {
     pointer-events: none;
     position: absolute;
     top: -10px;
-    color: var(--error);
-    background-color: var(--background);
+    color: rgb(var(--error));
+    background-color: rgb(var(--background));
 }

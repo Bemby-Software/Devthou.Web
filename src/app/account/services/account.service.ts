@@ -14,7 +14,7 @@ export class AccountService {
   async CreateAccount(accountDetails : CreateAccountDto) : Promise<AccountCreatedDto>
   {
     console.log(accountDetails);
-    return Promise.resolve(new AccountCreatedDto("email"));
+    return Promise.resolve(new AccountCreatedDto("first", "last", "email"));
   }
 
   async IsEmailValid(email : string) : Promise<ValidationErrors | null> {

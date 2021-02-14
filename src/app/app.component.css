@@ -1,11 +1,13 @@
 :host {
-    --primary: #0aee02;
-    --secondary: #e602ee;
-    --analogous-1: #80ee02;
-    --analogous-2: #80ee02;
-    --triadic-1: #02eee6;
-    --triadic-2: #020aee;
-    --error: #B00020;
-    --foreground: #9c9c9c;
-    --background: #ffffff;
+    --primary: 10, 238, 2;
+    --on-primary: 255, 255, 255;
+    --secondary: 230, 2, 238;
+    --on-secondary: 255, 255, 255;
+    --analogous-1: 128, 238, 2;
+    --analogous-2: 128, 238, 2;
+    --triadic-1: 2, 238, 230;
+    --triadic-2: 2, 10, 238;
+    --error: 176, 0, 32;
+    --foreground: 156, 156, 156;
+    --background: 255, 255, 255;
 }
