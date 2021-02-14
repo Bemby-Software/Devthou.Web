@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccountModule } from './account/account.module';
-import { TextBoxComponent } from './shared/text-box/text-box.component';
-import { SharedModule } from './shared/shared.module';
+import { TextBoxComponent } from './bemby-ui/text-box/text-box.component';
+import { BembyUiModule } from './bemby-ui/bemby-ui.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     AccountModule,
-    SharedModule
+    BembyUiModule
   ],
   providers: [],
   bootstrap: [AppComponent]

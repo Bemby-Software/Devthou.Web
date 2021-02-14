@@ -16,4 +16,4 @@ import { ButtonComponent } from './button/button.component';
     CommonModule
   ]
 })
-export class SharedModule { }
+export class BembyUiModule { }

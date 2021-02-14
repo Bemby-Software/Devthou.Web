@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CreateAccountFormComponent } from './create-account/create-account-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from '../shared/shared.module';
+import { BembyUiModule } from '../bemby-ui/bemby-ui.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    SharedModule
+    BembyUiModule
   ]
 })
 export class AccountModule { }
